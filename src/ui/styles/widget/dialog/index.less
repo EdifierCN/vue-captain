@@ -1,0 +1,139 @@
+@import "../../base/fn";
+
+.zmui-dialog {
+  position: fixed;
+  z-index: 5000;
+  width: 80%;
+  max-width: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: @zmuiDialogBackgroundColor;
+  text-align: center;
+  border-radius: 13px;
+  overflow: hidden;
+}
+.zmui-dialog__hd {
+  padding: 1.3em @zmuiDialogGapWidth .5em;
+  &.with-no-content {
+    padding: 1.7em @zmuiDialogGapWidth;
+  }
+}
+.zmui-dialog__title {
+  font-weight: 400;
+  font-size: 18px;
+}
+.zmui-dialog__bd {
+  padding: 0 @zmuiDialogGapWidth .8em;
+  min-height: 40px;
+  font-size: 15px;
+  line-height: 1.3;
+  word-wrap: break-word;
+  word-break: break-all;
+  color: @zmuiTextColorGray;
+  &:first-child{
+    padding:2.7em 20px 1.7em;
+    color:#353535;
+  }
+}
+.zmui-dialog__ft {
+  position: relative;
+  line-height: 48px;
+  font-size: 18px;
+  display: flex;
+  &:after {
+    content: " ";
+    .setTopLine(@zmuiDialogLineColor);
+  }
+}
+.zmui-dialog__btn {
+  display: block;
+  flex: 1;
+  color: @zmuiDialogLinkColor;
+  text-decoration: none;
+  .setTapColor();
+  &:active {
+    background-color: @zmuiDialogLinkActiveBc;
+  }
+
+  position: relative;
+  &:after {
+    content: " ";
+    .setLeftLine(@zmuiDialogLineColor);
+  }
+  &:first-child {
+    &:after {
+      display: none;
+    }
+  }
+}
+.zmui-dialog__btn_default {
+  color: @dialog-button-text-default-color;
+}
+.zmui-dialog__btn_primary {
+  color: @dialog-button-text-primary-color;
+}
+.zmui-dialog__btn_warn {
+  color: @dialog-button-text-warn-color;
+}
+
+.zmui-skin_android{
+  .zmui-dialog {
+    text-align: left;
+    box-shadow: 0 6px 30px 0 rgba(0, 0, 0, .1);
+  }
+  .zmui-dialog__title{
+    font-size: 21px;
+  }
+  .zmui-dialog__hd{
+    text-align: left;
+  }
+  .zmui-dialog__bd{
+    color:@zmuiTextColorGray;
+    padding:.25em @zmuiDialogGapWidth 2em;
+    font-size: 17px;
+    text-align: left;
+    &:first-child{
+      padding:1.6em @zmuiDialogGapWidth 2em;
+      color:#353535;
+    }
+  }
+  .zmui-dialog__ft{
+    display: block;
+    text-align: right;
+    line-height: 42px;
+    font-size: 16px;
+    padding:0 @zmuiDialogGapWidth .7em;
+    &:after{
+      display: none;
+    }
+  }
+  .zmui-dialog__btn{
+    display: inline-block;
+    vertical-align: top;
+    padding:0 .8em;
+    &:after{
+      display: none;
+    }
+
+    &:active{
+      background-color: rgba(0,0,0,.06);
+    }
+    &:visited{
+      background-color: rgba(0,0,0,.06);
+    }
+    &:last-child{
+      margin-right: -.8em;
+    }
+  }
+  .zmui-dialog__btn_default {
+    color: #808080;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .zmui-dialog {
+    width: 35%;
+  }
+}

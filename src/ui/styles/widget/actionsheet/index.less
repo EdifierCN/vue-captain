@@ -1,0 +1,131 @@
+@import "../../base/fn";
+@zmuiActionSheetAndroidBorderRadius: 2px;
+
+.zmui-actionsheet {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  backface-visibility: hidden;
+  z-index: 5000;
+  width: 100%;
+  //slide up animation
+  transform: translate(0, 0);
+  transition: transform .3s;
+}
+
+.zmui-actionsheet__menu{
+  background-color: #f7f7f7;
+}
+.zmui-actionsheet__action {
+  background-color: #f7f7f7;
+  margin-top: 6px;
+}
+.zmui-actionsheet__cell {
+  position: relative;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 18px;
+  &:before {
+    .setTopLine(@zmuiCellBorderColor);
+  }
+  &:active{
+    background-color: @zmuiBgColorActive;
+  }
+  &:first-child{
+    &:before{
+      display: none;
+    }
+  }
+}
+
+.zmui-actionsheet-skin_ios{
+  &.zmui-actionsheet_transparent{
+    .zmui-actionsheet__menu{
+      margin: 8px;
+      border-radius: 4px;
+    }
+    .zmui-actionsheet__action{
+      margin: 8px;
+      border-radius: 4px;
+    }
+  }
+}
+
+//android actionSheet
+.zmui-actionsheet-skin_android{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    transform: translate(-50%, -50%);
+    //padding: 0 40px;
+    width: 274px;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+    background: transparent;
+    //slide up animation
+    transition: transform .3s;
+
+  .zmui-actionsheet__action{
+    display: none;
+  }
+  .zmui-actionsheet__menu {
+    border-radius: @zmuiActionSheetAndroidBorderRadius;
+    box-shadow: 0 6px 30px 0 rgba(0,0,0,.1);
+    margin: 0;
+  }
+  .zmui-actionsheet__cell {
+    padding: 13px 24px;
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: left;
+    &:first-child {
+      border-top-left-radius: @zmuiActionSheetAndroidBorderRadius;
+      border-top-right-radius: @zmuiActionSheetAndroidBorderRadius;
+    }
+    &:last-child {
+      border-bottom-left-radius: @zmuiActionSheetAndroidBorderRadius;
+      border-bottom-right-radius: @zmuiActionSheetAndroidBorderRadius;
+    }
+  }
+}
+
+//actionSheet aniamtion
+//.zmui-actionsheet_toggle{
+//  transform: translate(0, 0);
+//}
+
+// menu styles
+.zmui-actionsheet-menu-primary {
+  color: @actionsheet-label-primary-color;
+}
+.zmui-actionsheet-menu-danger{
+  color: @actionsheet-label-warn-color;
+}
+.zmui-actionsheet-menu-default {
+  color: @actionsheet-label-default-color;
+}
+.zmui-actionsheet-menu-disabled {
+  color: @actionsheet-label-disabled-color;
+}
+
+// transition
+.zmui-actionsheet-mask-enter,
+.zmui-actionsheet-mask-leave-active,
+.zmui-android-actionsheet-enter,
+.zmui-android-actionsheet-leave-active {
+  opacity: 0;
+}
+.zmui-actionsheet-mask-leave-active,
+.zmui-actionsheet-mask-enter-active,
+.zmui-android-actionsheet-leave-active,
+.zmui-android-actionsheet-enter-active {
+  transition: opacity 400ms!important;
+}
+
+.zmui-ios-actionsheet-leave, .zmui-ios-actionsheet-enter-to{
+  transform: translate(0, 0);
+}
+.zmui-ios-actionsheet-enter, .zmui-ios-actionsheet-leave-to{
+  transform: translate(0, 100%);
+}

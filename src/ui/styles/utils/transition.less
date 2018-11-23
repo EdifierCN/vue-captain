@@ -1,0 +1,33 @@
+.zmui-fade-enter-active,.zmui-fade-leave-active {
+  opacity: 1;
+  transition: opacity linear 0.2s;
+}
+
+.zmui-fade-enter, .zmui-fade-leave-to {
+  opacity: 0;
+}
+
+.zmui-dialog-enter-active, .zmui-dialog-leave-active {
+  opacity: 1;
+  transition-duration: 400ms;
+  transform: translate(-50%, -50%) scale(1)!important;
+  transition-property: transform, opacity!important;
+}
+.zmui-dialog-leave-active {
+  transition-duration: 300ms;
+}
+.zmui-dialog-enter {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1.185)!important;
+}
+.zmui-dialog-leave-active {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.85)!important;
+}
+
+.zmui-mask-enter, .zmui-mask-leave-active {
+  opacity: 0;
+}
+.zmui-mask-leave-active, .zmui-mask-enter-active {
+  transition: opacity 300ms;
+}

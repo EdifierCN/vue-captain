@@ -1,0 +1,61 @@
+@import "../../base/mixin/multiple";
+
+.zmui-checkbox {
+  display: inline-block;
+  padding-right: 10px;
+  > input[type="checkbox"] {
+    position: absolute;
+    left: -9999em;
+    &:checked + .zmui-checkbox-icon {
+      background-color: currentColor;
+      border-color: currentColor;
+      > i {
+        transform: translate(-50%, -50%) rotate(45deg) scale(1);
+        transition: all .2s ease-in-out;
+      }
+    }
+    &:disabled ~ .zmui-checkbox-text {
+      color: #CCC;
+    }
+    &:disabled + .zmui-checkbox-icon {
+      border-color: #CCC;
+      background-color: #F3F3F3;
+      > i {
+        border-color: #CCC;
+      }
+    }
+  }
+}
+
+.zmui-checkbox-icon {
+    border: 1px solid #CCC;
+    border-radius: 2px;
+    display: inline-block;
+    position: relative;
+    z-index: 10;
+    vertical-align: bottom;
+    pointer-events: none;
+    > i {
+      content: '';
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      border: 2px solid #FFF;
+      border-top: 0;
+      border-left: 0;
+      transform: translate(-50%, -50%) rotate(45deg) scale(0);
+    }
+  }
+
+.zmui-checkbox-text {
+    margin-left: 1px;
+    font-size: 15px;
+    color: #666;
+    pointer-events: none;
+  }
+
+.zmui-checkbox-circle {
+    .zmui-checkbox-icon {
+      border-radius: 50%;
+    }
+  }

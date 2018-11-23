@@ -1,0 +1,12 @@
+@import "../../base/fn";
+
+.zmui-btn_primary {
+    background-color: @zmuiBtnPrimaryBg;
+    &:not(.zmui-btn_disabled):visited {
+        color: @zmuiBtnFontColor;
+    }
+    &:not(.zmui-btn_disabled):active {
+        color: @zmuiBtnActiveFontColor;
+        background-color: @zmuiBtnPrimaryActiveBg;
+    }
+}

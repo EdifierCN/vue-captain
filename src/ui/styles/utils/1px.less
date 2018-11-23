@@ -1,0 +1,58 @@
+@import "../base/fn";
+
+.setLine(@c: #C7C7C7) {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200%;
+  height: 1px;
+  border: 1px solid @c;
+  color: @c;
+  height: 200%;
+  transform-origin: left top;
+  transform: scale(0.5);
+}
+
+.zmui-1px, .zmui-1px-t, .zmui-1px-b, .zmui-1px-tb, .zmui-1px-l, .zmui-1px-r {
+  position: relative;
+}
+
+.zmui-1px {
+  &:before {
+    .setLine();
+  }
+}
+
+.zmui-1px-t {
+  &:before {
+    .setTopLine();
+  }
+}
+
+.zmui-1px-b {
+  &:after {
+    .setBottomLine();
+  }
+}
+
+.zmui-1px-tb {
+  &:before {
+    .setTopLine();
+  }
+  &:after {
+    .setBottomLine();
+  }
+}
+
+.zmui-1px-l {
+  &:before {
+    .setLeftLine();
+  }
+}
+
+.zmui-1px-r {
+  &:after {
+    .setRightLine();
+  }
+}

@@ -1,0 +1,17 @@
+
+@import '../cell/check';
+@import '../../icon/icon_font';
+
+.zmui-cells_checkbox .zmui-check:checked + .zmui-checklist-icon-checked:before {
+  color: @checklist-icon-active-color;
+}
+
+.zmui-cells_checkbox > label > * {
+  pointer-events: none;
+}
+.zmui-checklist-disabled .zmui-checklist-icon-checked:before {
+  opacity: 0.5;
+}
+.zmui-checklist-label-left {
+  flex-direction: row-reverse;
+}

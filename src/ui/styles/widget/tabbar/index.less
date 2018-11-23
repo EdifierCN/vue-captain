@@ -1,0 +1,55 @@
+@import "../../base/fn";
+
+.zmui-tabbar {
+  display: flex;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  background-color: #F7F7FA;
+
+  &:before {
+    .setTopLine(#C0BFC4);
+  }
+}
+
+.zmui-tabbar__item {
+  display: block;
+  flex: 1;
+  padding: 5px 0 0;
+  font-size: 0;
+  color: @zmuiTextColorGray;
+  text-align: center;
+  .setTapColor();
+
+  &.zmui-bar__item_on {
+    .zmui-tabbar__icon,
+    .zmui-tabbar__icon > i,
+    .zmui-tabbar__label {
+      color: @tabbar-text-active-color;
+    }
+  }
+}
+
+.zmui-tabbar__icon {
+  display: inline-block;
+  width: 27px;
+  height: 27px;
+
+  i&,
+  > i {
+    font-size: 24px;
+    color: @zmuiTextColorGray;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.zmui-tabbar__label {
+  text-align: center;
+  color: @zmuiTextColorGray;
+  font-size: 10px;
+  line-height: 1.8;
+}

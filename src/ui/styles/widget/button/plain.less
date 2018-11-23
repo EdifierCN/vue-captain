@@ -1,0 +1,56 @@
+@import "../../base/fn";
+
+.zmui-btn_plain-danger {
+  color: @zmuiBtnPlainDangerColor;
+  border: 1px solid @zmuiBtnPlainDangerBorderColor;
+  &:not(.zmui-btn_plain-disabled):active {
+    color:@zmuiBtnPlainDangerActiveColor;
+    border-color: @zmuiBtnPlainDangerActiveBorderColor;
+    background-color: transparent;
+  }
+  &:after {
+    border-width: 0;
+  }
+}
+
+.zmui-btn_plain-warn {
+  color: @zmuiBtnPlainWarnColor;
+  border: 1px solid @zmuiBtnPlainWarnBorderColor;
+  &:not(.zmui-btn_plain-disabled):active {
+    color:@zmuiBtnPlainWarnActiveColor;
+    border-color: @zmuiBtnPlainWarnActiveBorderColor;
+    background-color: transparent;
+  }
+  &:after {
+    border-width: 0;
+  }
+}
+
+.zmui-btn_plain-primary {
+    color: @zmuiBtnPlainPrimaryColor;
+    border: 1px solid @zmuiBtnPlainPrimaryBorderColor;
+    &:not(.zmui-btn_plain-disabled):active {
+        color:@zmuiBtnPlainPrimaryActiveColor;
+        border-color: @zmuiBtnPlainPrimaryActiveBorderColor;
+        background-color: transparent;
+    }
+    &:after {
+        border-width: 0;
+    }
+}
+
+.zmui-btn_plain-default {
+    color: @zmuiBtnPlainDefaultColor;
+    border: 1px solid @zmuiBtnPlainDefaultBorderColor;
+    &:not(.zmui-btn_plain-disabled):active {
+        color:@zmuiBtnPlainDefaultActiveColor;
+        border-color: @zmuiBtnPlainDefaultActiveBorderColor;
+    }
+    &:after {
+        border-width: 0;
+    }
+}
+.zmui-btn_plain-disabled{
+    color:rgba(0,0,0,.2);
+    border-color:rgba(0,0,0,.2);
+}

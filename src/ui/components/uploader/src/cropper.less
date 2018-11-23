@@ -1,0 +1,306 @@
+.cropper-box{
+    position: absolute;
+    -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+
+  width: 100%;
+  height: 100%;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cropper-box .cropper-modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #000;
+    filter: alpha(opacity=90);
+    opacity: .9;
+    transition: all 0.3s;
+
+  &.is-touching{
+    opacity: .2;
+  }
+}
+
+
+.cropper-box .cropper-dragger {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+}
+
+.cropper-box .cropper-preview ,.cropper-box .cropper-source{
+  position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.cropper-preview .cropper-preview-scroller, .cropper-source .cropper-source-scroller {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  >img{
+    flex: none
+  }
+}
+
+.cropper-box .cropper-source{
+  width: 100%;
+  height: 100%;
+}
+
+.cropper-box .cropper-preview{
+  overflow: hidden;
+}
+
+.cropper-box .cropper-dashed {
+    position: absolute;
+    display: block;
+    filter: alpha(opacity=50);
+    border: 0 dashed #fff;
+
+}
+
+.cropper-box .dashed-h {
+    top: 33.3%;
+    left: 0;
+    width: 100%;
+    height: 33.3%;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+}
+
+.cropper-box .dashed-v {
+    top: 0;
+    left: 33.3%;
+    width: 33.3%;
+    height: 100%;
+    border-right-width: 1px;
+    border-left-width: 1px;
+}
+
+.cropper-box .cropper-face{
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  filter: alpha(opacity=10);
+  opacity: 0;
+}
+
+.cropper-box .cropper-line,
+.cropper-box .cropper-point {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.cropper-box .cropper-face {
+    top: 0;
+    left: 0;
+    cursor: move;
+    background-color: #fff;
+}
+
+.cropper-box .cropper-line {
+  background: #ffffff url('./img/line.gif');
+  font-size: 0;
+  filter: alpha(opacity=40);
+  opacity: 0.4;
+}
+
+.cropper-box .line-e {
+    top: 0;
+    right: -2px;
+    width: 1px;
+    cursor: e-resize;
+}
+
+.cropper-box .line-n {
+    top: -2px;
+    left: 0;
+    height: 1px;
+    cursor: n-resize;
+}
+
+.cropper-box .line-w {
+    top: 0;
+    left: -2px;
+    width: 1px;
+    cursor: w-resize;
+}
+
+.cropper-box .line-s {
+    bottom: -2px;
+    left: 0;
+    height: 1px;
+    cursor: s-resize;
+}
+
+.cropper-box .cropper-point {
+    display: block;
+    width: 20px;
+    height: 20px;
+    filter: alpha(opacity=75);
+    opacity: .75;
+}
+
+.cropper-box .point-e {
+    top: 49%;
+    right: -2px;
+    cursor: e-resize;
+}
+
+.cropper-box .point-n {
+    top: -2px;
+    left: 49%;
+    cursor: n-resize;
+}
+
+.cropper-box .point-w {
+    top: 49%;
+    left: -2px;
+    cursor: w-resize;
+}
+
+.cropper-box .point-s {
+    bottom: -2px;
+    left: 49%;
+    cursor: s-resize;
+}
+
+.cropper-box .point-ne {
+    top: -2px;
+    right: -2px;
+    cursor: ne-resize;
+
+  &:before{
+    position: absolute;
+    right: -2px;
+    top: 0;
+    display: block;
+    width: 4px;
+    height: 20px;
+    content: "";
+    background-color: #FFFFFF;
+  }
+  &:after{
+    position: absolute;
+    right: -1px;
+    top: -1px;
+    display: block;
+    width: 20px;
+    height: 4px;
+    content: "";
+    background-color: #FFFFFF;
+  }
+}
+
+.cropper-box .point-nw {
+    top: -2px;
+    left: -2px;
+    cursor: nw-resize;
+
+  &:before{
+    position: absolute;
+    left: -1px;
+    top: -2px;
+    display: block;
+    width: 20px;
+    height: 4px;
+    content: "";
+    background-color: #FFFFFF;
+  }
+  &:after{
+    position: absolute;
+    left: -2px;
+    top: -1px;
+    display: block;
+    width: 4px;
+    height: 20px;
+    content: "";
+    background-color: #FFFFFF;
+  }
+}
+
+.cropper-box .point-sw {
+    bottom: -2px;
+    left: -2px;
+    cursor: sw-resize;
+
+  &:before{
+    position: absolute;
+    left: -1px;
+    bottom: -2px;
+    display: block;
+    width: 20px;
+    height: 4px;
+    content: "";
+    background-color: #FFFFFF;
+  }
+  &:after{
+    position: absolute;
+    left: -2px;
+    bottom: -1px;
+    display: block;
+    width: 4px;
+    height: 20px;
+    content: "";
+    background-color: #FFFFFF;
+  }
+}
+
+.cropper-box .point-se {
+    right: -2px;
+    bottom: -2px;
+    cursor: se-resize;
+
+    &:before{
+      position: absolute;
+      right: -2px;
+      bottom: -2px;
+      display: block;
+      width: 20px;
+      height: 4px;
+      content: "";
+      background-color: #FFFFFF;
+    }
+    &:after{
+      position: absolute;
+      right: -2px;
+      bottom: -2px;
+      display: block;
+      width: 4px;
+      height: 20px;
+      content: "";
+      background-color: #FFFFFF;
+    }
+}
+
+.cropper-hidden {
+    display: none !important;
+}

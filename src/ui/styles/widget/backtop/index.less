@@ -1,0 +1,23 @@
+
+
+.zmui{
+  &-backtop {
+    border: 1px solid #C0C0C0;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, .85);
+    position: fixed;
+    border-radius: 50%;
+    right: 5%;
+    bottom: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    &:after {
+      content: 'back';
+      font-size: 16px;
+      color: #C0C0C0;
+    }
+  }
+}

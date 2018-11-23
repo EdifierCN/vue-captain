@@ -1,0 +1,40 @@
+@import "../../base/fn";
+
+.zmui-loadmore{
+  width: 65%;
+  margin:1.5em auto;
+  line-height: 1.6em;
+  font-size:14px;
+  text-align: center;
+}
+.zmui-loadmore__tips{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.zmui-loadmore_line{
+  border-top:1px solid @zmuiLineColorLight;
+  margin-top:2.4em;
+  .zmui-loadmore__tips{
+    position: relative;
+    top:-.9em;
+    padding:0 .55em;
+    color:@zmuiTextColorGray;
+  }
+}
+.zmui-loadmore_dot{
+  .zmui-loadmore__tips{
+    padding:0 .16em;
+    &:before{
+      content: " ";
+      width:4px;
+      height:4px;
+      border-radius:50%;
+      background-color: @zmuiLineColorLight;
+      display: inline-block;
+      position: relative;
+      vertical-align: 0;
+      top:-.16em;
+    }
+  }
+}

@@ -1,0 +1,108 @@
+@import '../../base/fn';
+
+.zmui-navbar {
+  position: relative;
+  padding: 3px 0;
+  box-sizing: border-box;
+  background-color: #f7f7f7;
+  top: 0;
+  -webkit-box-shadow: 0 1px 6px #ccc;
+  box-shadow: 0 1px 6px #ccc;
+  backface-visibility: hidden;
+}
+.zmui-navbar .zmui-navbar-title {
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  color: #000000;
+}
+.zmui-navbar-title-area, .zmui-navbar .zmui-navbar-title {
+  margin: 0 88px;
+  height: 40px;
+  width: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.zmui-navbar .zmui-navbar-title > span {
+  display: inline-block;
+}
+.zmui-navbar .zmui-navbar-left,.zmui-navbar .zmui-navbar-right {
+  position: absolute;
+  top: 14px;
+  display: block;
+  font-size: 16px;
+  line-height: 21px;
+  color: #666;
+}
+.zmui-navbar .zmui-navbar-left a,.zmui-navbar .zmui-navbar-left button,.zmui-navbar .zmui-navbar-right a,.zmui-navbar .zmui-navbar-right button {
+  float: left;
+  margin-right: 8px;
+  color: #666;
+}
+.zmui-navbar .zmui-navbar-left a:active,.zmui-navbar .zmui-navbar-left button:active,.zmui-navbar .zmui-navbar-right a:active,.zmui-navbar .zmui-navbar-right button:active {
+  opacity: .5
+}
+.zmui-navbar .zmui-navbar-left {
+  left: 18px
+}
+.zmui-navbar .zmui-navbar-left .zmui-navbar-back {
+  padding-left: 16px
+}
+.zmui-navbar .zmui-navbar-left .left-arrow {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: -5px;
+  left: -5px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border: 1px solid @navbar-arrow-color;
+    border-width: 1px 0 0 1px;
+    transform: rotate(315deg);
+    top: 8px;
+    left: 7px;
+  }
+}
+.zmui-navbar .zmui-navbar-right {
+  right: 15px
+}
+.zmui-navbar .zmui-navbar-right a,.zmui-navbar .zmui-navbar-right button {
+  margin-left: 8px;
+  margin-right: 0
+}
+.zmui-navbar .zmui-navbar-right .zmui-navbar-more:after {
+  content: "\2022\0020\2022\0020\2022\0020";
+  font-size: 16px;
+}
+.zmui-navbar-fade-in-right-enter-active {
+  animation: fadeinR .5s;
+}
+.zmui-navbar-fade-in-left-enter-active {
+  animation: fadeinL .5s;
+}
+@keyframes fadeinR {
+  0% {
+    opacity: 0;
+    transform: translateX(150px);
+  }
+  100% {
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+@keyframes fadeinL{
+  0% {
+    opacity: 0;
+    transform: translateX(-150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

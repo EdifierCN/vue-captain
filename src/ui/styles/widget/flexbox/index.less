@@ -1,0 +1,31 @@
+.zmui-flexbox {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  display: -webkit-flex;
+  box-align: center;
+  align-items: center;
+  .zmui-flexbox-item {
+    flex: 1;
+    -webkit-flex: 1;
+    min-width: 20px;
+    width: 0%;
+    &:first-child {
+      margin-left: 0!important;
+      margin-top: 0!important;
+    }
+  }
+}
+.zmui-flex-col
+.zmui-flex-row {
+  box-direction: row;
+  box-orient: horizontal;
+  flex-direction: row;
+}
+.zmui-flex-col {
+  box-orient: vertical;
+  flex-direction: column;
+  > .zmui-flexbox-item {
+    width: 100%;
+  }
+}

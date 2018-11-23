@@ -1,0 +1,23 @@
+@import "../../../base/fn";
+
+// method2 accessbility
+.zmui-cells_radio{
+    .zmui-cell__ft {
+        padding-left: @zmuiCellInnerGapH;
+    }
+}
+.zmui-check {
+    // radio
+    .zmui-cells_radio & {
+        &:checked {
+            & + .zmui-icon-checked {
+                &:before {
+                    display: block;
+                    content: '\EA08';
+                    color: @radio-checked-icon-color;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

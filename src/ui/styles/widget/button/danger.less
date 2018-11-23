@@ -1,0 +1,12 @@
+@import "../../base/fn";
+
+.zmui-btn_danger{
+  background-color: @zmuiBtnDangerBg;
+  &:not(.zmui-btn_disabled):visited {
+    color: @zmuiBtnFontColor;
+  }
+  &:not(.zmui-btn_disabled):active {
+    color: @zmuiBtnActiveFontColor;
+    background-color: @zmuiBtnDangerActiveBg;
+  }
+}

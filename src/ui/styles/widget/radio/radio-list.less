@@ -1,0 +1,20 @@
+@import '../cell/check';
+@import '../cell/form/common';
+@import '../../icon/icon_font';
+
+.zmui-cell_radio > * {
+  pointer-events: none;
+}
+.zmui-radio-icon {
+  width: 20px;
+  height:20px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.zmui-radio-label {
+  vertical-align: middle;
+}
+.zmui-cells_radio.zmui-radio-disabled .zmui-check:checked + .zmui-icon-checked:before {
+  opacity: 0.5;
+}

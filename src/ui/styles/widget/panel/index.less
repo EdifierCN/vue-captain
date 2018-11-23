@@ -1,0 +1,34 @@
+@import "../../base/fn";
+
+
+.zmui-panel {
+  background-color: #FFFFFF;
+  margin-top: 10px;
+  &:first-child {
+    margin-top: 0;
+  }
+
+  position: relative;
+  overflow: hidden;
+  &:before {
+    .setTopLine(@zmuiLineColorLight);
+  }
+  &:after {
+    .setBottomLine(@zmuiLineColorLight);
+  }
+}
+
+.zmui-panel__hd {
+  padding: 14px 15px 10px;
+  color: @zmuiTextColorGray;
+  font-size: 13px;
+  position: relative;
+  &:after {
+    .setBottomLine(@zmuiLineColorLight);
+    left: 15px;
+  }
+}
+
+
+
+

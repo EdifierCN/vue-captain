@@ -1,0 +1,66 @@
+@import "../../base/fn";
+@import "global";
+@import "default";
+@import "primary";
+@import "warn";
+@import "danger";
+@import "disabled";
+@import "loading";
+@import "plain";
+
+button, input {
+    &.zmui-btn {
+        width: 100%;
+        border-width: 0;
+        outline: 0;
+        -webkit-appearance: none;
+        &:focus {
+            outline: 0;
+        }
+    }
+    &.zmui-btn_inline,&.zmui-btn_mini {
+        width: auto;
+    }
+  &.zmui-btn_plain-danger,&.zmui-btn_plain-warn,&.zmui-btn_plain-primary,&.zmui-btn_plain-default{
+        border-width: 1px;
+        background-color: transparent;
+    }
+}
+
+.zmui-btn_mini {
+    display: inline-block;
+    padding: 0 1.32em;
+    line-height: @zmuiBtnMiniHeight;
+    font-size: @zmuiBtnMiniFontSize;
+}
+
+
+/*gap between btn*/
+.zmui-btn + .zmui-btn {
+    margin-top: @zmuiBtnDefaultGap;
+}
+
+.zmui-btn.zmui-btn_inline + .zmui-btn.zmui-btn_inline {
+    margin-top: auto;
+    margin-left: @zmuiBtnDefaultGap;
+}
+
+.zmui-btn-area {
+    margin: @zmuiCellsMarginTop @zmuiBtnDefaultGap .3em;
+}
+.zmui-btn-area_inline {
+    display: flex;
+    .zmui-btn {
+        margin-top: auto;
+        margin-right: @zmuiBtnDefaultGap;
+        width: 100%;
+        flex: 1;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.zmui-btn.zmui-btn_no-border:after {
+  display: none;
+}

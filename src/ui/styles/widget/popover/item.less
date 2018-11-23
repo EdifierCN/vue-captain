@@ -1,0 +1,15 @@
+@import '../../base/fn';
+
+@popover-item-border-color: rgba(0, 0, 0, .2);
+
+.zmui-popover-item {
+  width: auto;
+  padding: .3rem;
+  font-size: 14px;
+  line-height: 1.5;
+
+  + .zmui-popover-item {
+    position: relative;
+    .hairline(top, @popover-item-border-color);
+  }
+}

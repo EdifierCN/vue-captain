@@ -1,0 +1,30 @@
+@import "../../../base/fn";
+
+.zmui-cells_checkbox {
+    .zmui-cell__hd {
+        padding-right: @zmuiCellInnerGapH;
+    }
+    .zmui-icon-checked {
+        &:before {
+            content: '\EA01';
+            color: #C9C9C9;
+            font-size: 23px;
+            display: block;
+        }
+    }
+}
+
+// method2 accessbility
+.zmui-check {
+    // checkbox
+    .zmui-cells_checkbox & {
+        &:checked {
+            & + .zmui-icon-checked {
+                &:before {
+                    content: '\EA06';
+                    color: #09BB07;
+                }
+            }
+        }
+    }
+}

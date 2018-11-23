@@ -1,0 +1,48 @@
+@import "./global";
+
+.zmui-cell-primary{
+  flex: 1
+}
+.zmui-cell-label{
+  display: block;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.zmui-cell-label-desc {
+  font-size:14px;
+  color:#666;
+}
+.zmui-cell__ft .zmui-loading{
+  display: block;
+}
+.zmui-cell__ft.zmui-cell-align-left{
+  text-align: left;
+}
+.zmui-cell.zmui-cell-no-border-intent:before{
+  left: 0;
+}
+.zmui-cell_access .zmui-cell__ft.zmui-cell-arrow-down:after{
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0) rotate(90deg);
+}
+.zmui-cell_access .zmui-cell__ft.zmui-cell-arrow-up:after{
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0) rotate(-90deg);
+}
+.zmui-cell-arrow-transition:after{
+  transition: transform 300ms;
+}
+.zmui-cell-disabled{
+  .zmui-cell-label{
+    color: #B2B2B2;
+  }
+  &.zmui-cell_access .zmui-cell__ft:after{
+    border-color: #e2e2e2
+  }
+}
+
+.zmui-cell-tap-active {
+  tap-highlight-color: rgba(0,0,0,0);
+  user-select:none;
+}
+.zmui-cell-tap-active:active {
+  background-color: #ECECEC;
+}

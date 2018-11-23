@@ -1,0 +1,100 @@
+@import "../../base/fn";
+@import '../../utils/transition.less';
+@import '../../utils/mask.less';
+@import '../../icon/icon_font';
+
+.zmui-toast {
+  position: fixed;
+  z-index: @toast-z-index;
+  width: 7.6em;
+  min-height: 7.6em;
+  top: @toast-top;
+  left: 50%;
+  margin-left: -3.8em;
+  background: rgba(17,17,17,0.7);
+  text-align: center;
+  border-radius: 5px;
+  color: #FFFFFF;
+}
+.zmui-icon_toast {
+  margin: 22px 0 0;
+  display: block;
+  &.zmui-icon-success-no-circle{
+    &:before {
+      color: #FFFFFF;
+      font-size: 55px;
+    }
+  }
+  &.zmui-loading{
+    margin:30px 0 0;
+    width:38px;
+    height:38px;
+    vertical-align: baseline;
+  }
+}
+
+.zmui-toast__content {
+  margin: 0 0 15px;
+}
+
+.zmui-toast.zmui-toast-top {
+  top: @toast-position-top-offset;
+}
+.zmui-toast.zmui-toast-bottom {
+  top: auto;
+  bottom: @toast-position-bottom-offset;
+  transform: translateX(-50%);
+}
+.zmui-toast.zmui-toast-middle {
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.zmui-slide-from-top-enter, .zmui-slide-from-top-leave-active {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-100%)!important;
+}
+.zmui-slide-from-bottom-enter, .zmui-slide-from-bottom-leave-active {
+  opacity: 0;
+  transform: translateX(-50%) translateY(100%)!important;
+}
+.zmui-slide-from-top-enter-active,
+.zmui-slide-from-top-leave-active,
+.zmui-slide-from-bottom-enter-active,
+.zmui-slide-from-bottom-leave-active {
+  transition: all 400ms cubic-bezier(.36,.66,.04,1);
+}
+.zmui-toast {
+  transform: translateX(-50%);
+  margin-left: 0!important;
+}
+.zmui-toast.zmui-toast_forbidden {
+  color: #F76260;
+}
+.zmui-toast.zmui-toast_forbidden .zmui-toast__content {
+  margin-top: 10px;
+}
+.zmui-toast.zmui-toast_text{
+  min-height: 0;
+}
+.zmui-toast_text .zmui-toast__content {
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 15px;
+}
+.zmui-toast__content {
+  font-size: @toast-content-font-size;
+}
+.zmui-loading_toast .zmui-toast__content {
+  margin-top: 0;
+}
+.zmui-toast_success .zmui-icon_toast:before {
+  content: "\EA08";
+}
+.zmui-toast_cancel .zmui-icon_toast:before {
+  content: "\EA0D";
+}
+.zmui-toast_forbidden .zmui-icon_toast.zmui-icon-success-no-circle:before {
+  content: "\EA0B";
+  color: #F76260;
+}
